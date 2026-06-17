@@ -1,0 +1,15 @@
+{
+  "name": "anant-pradnya-school",
+  "version": "1.0.0",
+  "description": "School Website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}

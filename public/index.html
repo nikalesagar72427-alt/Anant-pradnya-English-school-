@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anant Pradnya School - Quality Bilingual Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+</head>
+<body class="bg-white">
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function AnantPradnyaSchool() {
+            const [language, setLanguage] = useState('en');
+            const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+            const content = {
+                en: {
+                    title: 'Anant Pradnya School',
+                    subtitle: 'Where Excellence Meets Joy in Learning',
+                    cta: 'Start Admission',
+                    classes: 'Nursery | LKG | UKG | Classes 1-5 | Classes 6-8',
+                    address: 'Khandala, Vaijapur',
+                    phones: ['965-720-8916', '942-098-9816', '920-995-8215', '935-921-2114'],
+                },
+                mr: {
+                    title: 'अनंत प्रज्ञा स्कूल',
+                    subtitle: 'जेथे उत्कृष्टता आणि आनंद शिक्षणात मिळतात',
+                    cta: 'प्रवेश सुरू करा',
+                    classes: 'नर्सरी | एलकेजी | यूकेजी | वर्ग १-५ | वर्ग ६-८',
+                    address: 'खंडाळा, वैजापूर',
+                    phones: ['965-720-8916', '942-098-9816', '920-995-8215', '935-921-2114'],
+                }
+            };
+
+            const t = content[language];
+
+            return (
+                <div className="min-h-screen bg-white">
+                    {/* Header */}
+                    <header className="sticky top-0 z-50 bg-white border-b-4 border-sky-400 shadow-lg">
+                        <div className="max-w-7xl mx-auto px-4 py-6">
+                            <div className="flex justify-between items-center">
+                                <div className="flex items-center space-x-3">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-sky-100 to-blue-100 rounded-full border-4 border-sky-400 flex items-center justify-center text-3xl font-bold text-sky-700">
+                                        अ
+                                    </div>
+                                    <div>
+                                        <h1 className="font-bold text-sky-900 text-lg">Anant Pradnya School</h1>
+                                        <p className="text-xs text-sky-600">विद्वान् सर्वत्र पूज्यते</p>
+                                    </div>
+                                </div>
+                                <button
+                                    onClick={() => setLanguage(language === 'en' ? 'mr' : 'en')}
+                                    className="px-4 py-2 bg-gradient-to-r from-sky-400 to-blue-500 text-white rounded-full font-bold text-sm transition shadow-md"
+                                >
+                                    {language === 'en' ? 'मराठी' : 'EN'}
+                                </button>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* Hero Section */}
+                    <section className="bg-gradient-to-br from-sky-100 via-blue-50 to-white py-20 px-4">
+                        <div className="max-w-6xl mx-auto text-center">
+                            <h1 className="text-6xl font-black text-sky-900 mb-6">
+                                {t.title}
+                            </h1>
+                            <p className="text-2xl text-sky-700 mb-10 font-semibold">
+                                {t.subtitle}
+                            </p>
+                            <button className="bg-gradient-to-r from-sky-500 to-blue-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl transition transform hover:scale-105">
+                                {t.cta}
+                            </button>
+                            
+                            <div className="mt-16 bg-gradient-to-r from-sky-400 to-blue-500 rounded-3xl p-12 shadow-2xl text-white">
+                                <p className="text-3xl font-black mb-4">🎓 Classes Offered</p>
+                                <p className="text-xl font-semibold">{t.classes}</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* About Section */}
+                    <section className="py-20 px-4 bg-white">
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-5xl font-black text-center mb-10 text-sky-900">Our Vision</h2>
+                            <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-12 rounded-3xl border-4 border-sky-300 shadow-xl">
+                                <p className="text-2xl text-sky-800 leading-relaxed font-semibold text-center">
+                                    We nurture confident, compassionate learners who excel academically while developing strong character values through bilingual excellence.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Features Section */}
+                    <section className="py-20 px-4 bg-gradient-to-b from-sky-50 to-white">
+                        <div className="max-w-6xl mx-auto">
+                            <h2 className="text-5xl font-black text-center mb-16 text-sky-900">Why Choose Us</h2>
+                            <div className="grid md:grid-cols-3 gap-8">
+                                <div className="p-8 bg-gradient-to-br from-sky-100 to-blue-100 rounded-3xl shadow-lg border-4 border-sky-200">
+                                    <p className="text-4xl mb-4">👨‍🏫</p>
+                                    <h3 className="font-black text-2xl text-sky-900 mb-3">Expert Teachers</h3>
+                                    <p className="text-sky-700 font-semibold">TEFL/TESOL Certified & Passionate</p>
+                                </div>
+                                <div className="p-8 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl shadow-lg border-4 border-sky-200">
+                                    <p className="text-4xl mb-4">🚌</p>
+                                    <h3 className="font-black text-2xl text-sky-900 mb-3">Safe Transport</h3>
+                                    <p className="text-sky-700 font-semibold">GPS Tracking & Verified Drivers</p>
+                                </div>
+                                <div className="p-8 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl shadow-lg border-4 border-sky-200">
+                                    <p className="text-4xl mb-4">🌍</p>
+                                    <h3 className="font-black text-2xl text-sky-900 mb-3">Bilingual Excellence</h3>
+                                    <p className="text-sky-700 font-semibold">English + Marathi Medium</p>
+                                </div>
+                            </div>
+
+                            <div className="mt-16 grid md:grid-cols-4 gap-8 bg-gradient-to-r from-sky-400 to-blue-500 rounded-3xl p-12 shadow-2xl text-white">
+                                <div className="text-center">
+                                    <p className="text-5xl font-black">500+</p>
+                                    <p className="text-lg font-bold">Happy Students</p>
+                                </div>
+                                <div className="text-center border-l-4 border-blue-300">
+                                    <p className="text-5xl font-black">25+</p>
+                                    <p className="text-lg font-bold">Expert Teachers</p>
+                                </div>
+                                <div className="text-center border-l-4 border-blue-300">
+                                    <p className="text-5xl font-black">3+</p>
+                                    <p className="text-lg font-bold">Years of Excellence</p>
+                                </div>
+                                <div className="text-center border-l-4 border-blue-300">
+                                    <p className="text-5xl font-black">98%</p>
+                                    <p className="text-lg font-bold">Parent Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Admissions CTA */}
+                    <section className="py-24 px-4 bg-gradient-to-r from-sky-500 to-blue-600">
+                        <div className="max-w-4xl mx-auto text-center">
+                            <h2 className="text-6xl font-black text-white mb-6">Admissions Open Now!</h2>
+                            <p className="text-2xl font-bold text-sky-100 mb-10">Limited Seats Available | High Demand</p>
+                            <button className="bg-white text-blue-600 px-10 py-4 rounded-xl font-black text-lg hover:bg-sky-100 transition shadow-xl transform hover:scale-105">
+                                Schedule Campus Visit
+                            </button>
+                        </div>
+                    </section>
+
+                    {/* Contact Section */}
+                    <section className="py-20 px-4 bg-white">
+                        <div className="max-w-4xl mx-auto">
+                            <h2 className="text-5xl font-black text-center mb-16 text-sky-900">Contact Us</h2>
+                            <div className="grid md:grid-cols-2 gap-12">
+                                <div className="space-y-6">
+                                    <div className="bg-sky-50 p-8 rounded-2xl border-4 border-sky-300">
+                                        <p className="text-2xl font-black text-sky-900 mb-2">📍 Location</p>
+                                        <p className="text-xl text-sky-700 font-semibold">{t.address}</p>
+                                        <p className="text-lg text-sky-600 font-semibold">Aurangabad (Sambhajinagar), Maharashtra</p>
+                                    </div>
+                                    <div className="bg-blue-50 p-8 rounded-2xl border-4 border-sky-300">
+                                        <p className="text-2xl font-black text-sky-900 mb-4">📞 Phone Numbers</p>
+                                        <div className="space-y-2">
+                                            {t.phones.map((phone, i) => (
+                                                <a key={i} href={`tel:${phone.replace(/-/g, '')}`} className="block text-lg text-sky-700 hover:text-sky-900 font-bold transition">
+                                                    {phone}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-white p-10 rounded-2xl shadow-2xl border-4 border-sky-300">
+                                    <form className="space-y-4">
+                                        <input type="text" placeholder="Name" className="w-full px-4 py-3 border-2 border-sky-300 rounded-lg focus:outline-none focus:border-sky-500" />
+                                        <input type="email" placeholder="Email" className="w-full px-4 py-3 border-2 border-sky-300 rounded-lg focus:outline-none focus:border-sky-500" />
+                                        <input type="tel" placeholder="Phone" className="w-full px-4 py-3 border-2 border-sky-300 rounded-lg focus:outline-none focus:border-sky-500" />
+                                        <textarea placeholder="Message" rows="4" className="w-full px-4 py-3 border-2 border-sky-300 rounded-lg focus:outline-none focus:border-sky-500 resize-none"></textarea>
+                                        <button type="submit" className="w-full bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold py-3 rounded-lg hover:shadow-lg transition">
+                                            Send Message
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="bg-gradient-to-r from-sky-900 to-blue-900 text-white py-12 px-4">
+                        <div className="max-w-6xl mx-auto text-center">
+                            <p className="text-lg font-bold mb-2">© 2024 Anant Pradnya School, Khandala</p>
+                            <p className="font-semibold">विद्वान् सर्वत्र पूज्यते - Excellence in Education</p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<AnantPradnyaSchool />, document.getElementById('root'));
+    </script>
+</body>
+</html>
